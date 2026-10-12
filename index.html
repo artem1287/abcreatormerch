@@ -63,7 +63,7 @@ img{ max-width:100%; display:block; }
 /* ===== hero ===== */
 .hero{
   text-align:center;
-  padding:clamp(16px,2.2vw,28px) 0 clamp(6px,1vw,14px);
+  padding:clamp(16px,2.2vw,28px) 0 0;
   position:relative;
 }
 .hero__title{
@@ -73,15 +73,19 @@ img{ max-width:100%; display:block; }
   margin:0 auto clamp(6px,1vw,14px);
   max-width:15ch;
 }
-.hero__media{ position:relative; display:flex; justify-content:center; }
+/* media box keeps the original height so the green section never moves;
+   the enlarged mug (1.5x) overflows this box downward and the green overlaps it */
+.hero__media{ position:relative; height:clamp(360px, 48vw, 660px); }
 .hero__imgwrap{
-  width:auto;
+  position:absolute; top:0; left:0; right:0;
+  transform-origin:top center;
   transition:transform 2.5s cubic-bezier(.22,.61,.36,1);
   will-change:transform;
 }
 .hero__img{
-  height:clamp(360px, 48vw, 660px); width:auto; max-width:100%;
-  margin:0 auto; opacity:1; transition:opacity 1s ease;
+  display:block; margin:0 auto;
+  height:calc(clamp(360px, 48vw, 660px) * 1.5); width:auto; max-width:none;
+  opacity:1; transition:opacity 1s ease;
 }
 .hero__cta{
   position:absolute; left:50%; top:0;
@@ -89,7 +93,7 @@ img{ max-width:100%; display:block; }
 }
 
 /* ===== why (green) ===== */
-.why{ background:#055B43; padding:clamp(48px,6vw,88px) 0; }
+.why{ background:#055B43; padding:clamp(48px,6vw,88px) 0; position:relative; z-index:1; }
 .why__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2vw,32px); }
 .why__card{
   background:#166F56; border-radius:24px; color:#fff;
