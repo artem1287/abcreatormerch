@@ -3,112 +3,296 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>High Quality Merch for All Creators</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=4" />
+<title>Test Merch on Your Channel. Zero Risk. — AB Creator Merch</title>
+<meta name="description" content="AB Creator Merch designs, prints, and ships custom merch for creators. Free design, free setup, zero risk — send your channel link to get started." />
+<meta name="theme-color" content="#055B43" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Test merch on your channel. Zero risk. — AB Creator Merch" />
+<meta property="og:description" content="Free design, free setup, zero risk. Send your channel link and we'll handle the design, print, and fulfillment." />
+<meta property="og:image" content="images/header-1200.webp" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23055B43'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23fff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+<link rel="preload" as="image" type="image/avif" href="images/header-800.avif" imagesrcset="images/header-800.avif 800w, images/header-1200.avif 1200w, images/header-2002.avif 2002w, images/header-3003.avif 3003w" imagesizes="(max-width:800px) 82vw, 560px" fetchpriority="high" />
+<link rel="preload" as="font" type="font/woff2" href="fonts/instrumentserif-400.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin />
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/instrumentserif-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:#fff;
+  color:rgba(0,0,0,.95);
+  font-family:"Inter", system-ui, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+.wrap{ width:100%; max-width:1320px; margin:0 auto; padding:0 clamp(20px,5vw,72px); }
+
+/* serif display helper */
+.serif{ font-family:"Instrument Serif", Georgia, serif; font-weight:400; }
+
+/* ===== shared CTA button styles ===== */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.35em;
+  font-family:"Inter", sans-serif; font-weight:600; text-decoration:none;
+  cursor:pointer; border:none; line-height:1;
+  transition:background .15s ease, transform .12s ease;
+}
+.btn:active{ transform:translateY(2px); }
+.btn--yellow{
+  background:#EBE248; color:rgba(0,0,0,.82);
+  font-size:clamp(1.15rem, 2.4vw, 2.6rem);
+  letter-spacing:-.03em;
+  padding:clamp(.5em,1vw,.62em) clamp(.7em,1.4vw,1em);
+  border-radius:2px;
+}
+.btn--yellow:hover{ background:#DED53F; }
+.btn--like{
+  background:#EBE248; color:rgba(0,0,0,.82);
+  font-size:clamp(1rem, 1.6vw, 1.4rem);
+  padding:.55em 1.3em; border-radius:2px;
+}
+.btn--like:hover{ background:#DED53F; }
+.btn-arrow{ width:1em; height:1em; flex:0 0 auto; }
+.btn-arrow path{ fill:none; stroke:currentColor; stroke-width:15; stroke-linecap:round; stroke-linejoin:round; }
+
+/* ===== hero ===== */
+.hero{
+  text-align:center;
+  padding:clamp(16px,2.2vw,28px) 0 clamp(6px,1vw,14px);
+  position:relative;
+}
+.hero__title{
+  font-family:"Instrument Serif", Georgia, serif; font-weight:400;
+  font-size:clamp(2.4rem, 7.2vw, 8.75rem);
+  line-height:1.01;
+  margin:0 auto clamp(6px,1vw,14px);
+  max-width:15ch;
+}
+.hero__media{ position:relative; display:flex; justify-content:center; }
+.hero__imgwrap{
+  width:auto;
+  transition:transform 2.5s cubic-bezier(.22,.61,.36,1);
+  will-change:transform;
+}
+.hero__img{
+  height:clamp(320px, 42vw, 560px); width:auto; max-width:100%;
+  margin:0 auto; opacity:1; transition:opacity 1s ease;
+}
+.hero__cta{
+  position:absolute; left:50%; top:13%;
+  transform:translateX(-50%); z-index:3;
+}
+
+/* ===== why (green) ===== */
+.why{ background:#055B43; padding:clamp(48px,6vw,88px) 0; }
+.why__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2vw,32px); }
+.why__card{
+  background:#166F56; border-radius:24px; color:#fff;
+  padding:clamp(26px,2.4vw,44px);
+}
+.why__card h2{
+  font-family:"Instrument Serif", Georgia, serif; font-weight:400;
+  font-size:clamp(2rem, 3.6vw, 5rem); line-height:1.02;
+  margin:0 0 .45em;
+}
+.why__card p{
+  color:rgba(255,255,255,.85);
+  font-size:clamp(1rem, 1.3vw, 1.875rem); line-height:1.32; margin:0;
+}
+
+/* ===== designs ===== */
+.designs{ padding:clamp(52px,6vw,96px) 0; text-align:center; }
+.designs h2{
+  font-family:"Instrument Serif", Georgia, serif; font-weight:400;
+  font-size:clamp(2.6rem, 7vw, 8.75rem); line-height:1.03;
+  margin:0 0 clamp(28px,3vw,52px);
+}
+.designs__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,2.4vw,40px); }
+.design-item{ display:flex; flex-direction:column; align-items:center; gap:clamp(16px,1.6vw,26px); }
+.design-tile{
+  width:100%; aspect-ratio:428 / 423;
+  background:#D9D9D9; background-size:cover; background-position:center;
+  border-radius:6px;
+}
+
+/* ===== send / channel form ===== */
+.send{
+  background:linear-gradient(180deg,#2B2B2B 0%,#141414 100%);
+  padding:clamp(60px,8vw,150px) 0; text-align:center;
+}
+.send h2{
+  color:#FCFBFC;
+  font-family:"Instrument Serif", Georgia, serif; font-weight:400;
+  font-size:clamp(2.6rem, 7vw, 8.75rem); line-height:1.03;
+  margin:0 0 clamp(30px,3.4vw,54px);
+}
+.channel-form{
+  display:flex; gap:12px; flex-wrap:wrap; justify-content:center;
+  max-width:760px; margin:0 auto;
+}
+.cf-input{
+  flex:1 1 420px; min-width:0; height:clamp(56px,6vw,68px);
+  border:none; border-radius:2px; background:#fff; color:#1A1A1A;
+  font-family:"Inter", sans-serif; font-size:clamp(1rem,1.3vw,1.25rem);
+  padding:0 clamp(18px,1.6vw,26px); outline:none; transition:box-shadow .18s ease;
+}
+.cf-input::placeholder{ color:#9A9A9A; }
+.cf-input:focus{ box-shadow:0 0 0 3px rgba(243,85,25,.65); }
+.cf-btn{
+  height:clamp(56px,6vw,68px); padding:0 clamp(22px,2.2vw,34px);
+  border:none; border-radius:2px; background:#F35519; color:#fff; cursor:pointer;
+  font-family:"Inter", sans-serif; font-weight:700; font-size:clamp(1.05rem,1.4vw,1.4rem);
+  transition:background .15s ease, transform .12s ease;
+}
+.cf-btn:hover{ background:#C8420F; }
+.cf-btn:active{ transform:translateY(2px); }
+.cf-btn:disabled{ opacity:.6; cursor:default; }
+.cf-status{
+  margin:clamp(16px,1.6vw,22px) auto 0; max-width:620px; min-height:1.4em;
+  font-size:clamp(.9rem,1.1vw,1.05rem); line-height:1.35; color:rgba(255,255,255,.75);
+}
+.cf-status.is-ok{ color:#7BE0A6; }
+.cf-status.is-err{ color:#FF9A7A; }
+
+/* ===== footer ===== */
+.site-footer{ background:#191919; padding:clamp(26px,3vw,40px) 0; }
+.site-footer .wrap{
+  display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;
+  color:rgba(255,255,255,.6); font-size:clamp(.78rem,1vw,1.05rem);
+}
+.site-footer a{ color:rgba(255,255,255,.6); text-decoration:none; }
+.site-footer a:hover{ color:#fff; }
+
+/* ===== stacking on narrow screens ===== */
+@media (max-width:860px){
+  .why__grid{ grid-template-columns:1fr; max-width:520px; margin:0 auto; }
+  /* designs become a horizontal swipe row with a scrollbar instead of full-width stacks */
+  .designs__grid{
+    display:flex; grid-template-columns:none;
+    overflow-x:auto; gap:16px; max-width:none; margin:0;
+    scroll-snap-type:x mandatory;
+    padding-bottom:14px;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+    scrollbar-color:rgba(0,0,0,.3) rgba(0,0,0,.08);
+  }
+  .designs__grid .design-item{ flex:0 0 72%; max-width:320px; scroll-snap-align:center; }
+  .site-footer .wrap{ justify-content:center; text-align:center; }
+}
+.designs__grid::-webkit-scrollbar{ height:8px; }
+.designs__grid::-webkit-scrollbar-track{ background:rgba(0,0,0,.08); border-radius:4px; }
+.designs__grid::-webkit-scrollbar-thumb{ background:rgba(0,0,0,.3); border-radius:4px; }
+
+/* ===== intro animation + scroll reveals ===== */
+.hero__imgwrap.intro{ transform:translateY(-6%) scale(1.12); }
+.hero__imgwrap.intro .hero__img{ opacity:0; animation:floaty 2.4s ease-in-out infinite; }
+.hero__imgwrap.intro.shown .hero__img{ opacity:1; }
+@keyframes floaty{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-2.6%); } }
+.hero__title, .hero__cta{ transition:opacity 1.6s ease; }
+body.intro-playing .hero__title,
+body.intro-playing .hero__cta{ opacity:0; }
+/* if the viewer scrolls during the intro, let it resolve quickly */
+body.intro-fast .hero__imgwrap{ transition:transform .4s ease; }
+body.intro-fast .hero__img{ transition:opacity .3s ease; }
+body.intro-fast .hero__title,
+body.intro-fast .hero__cta{ transition:opacity .35s ease; }
+/* slower fade-ins everywhere else (scroll reveals) */
+.sr{ opacity:0; transition:opacity 2.4s cubic-bezier(.22,.61,.36,1); }
+.sr.in{ opacity:1; }
+
+@media (prefers-reduced-motion: reduce){
+  .hero__imgwrap, .hero__imgwrap.intro{ transform:none; transition:none; }
+  .hero__img{ opacity:1 !important; animation:none; }
+  .hero__title, .hero__cta, .sr{ opacity:1 !important; transition:none; }
+  html{ scroll-behavior:auto; }
+}
+</style>
 </head>
 <body>
-<header class="site-nav">
-  <div class="site-nav__inner">
-    <a href="#" class="site-nav__brand" id="navHome">AB Creator Merch</a>
-    <nav class="site-nav__links">
-      <a href="#" class="site-nav__link" id="navPortfolio">Portfolio</a>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abcreatormerch@gmail.com&su=Inquiry%20for%20AB%20Creator%20Merch" target="_blank" rel="noopener" class="site-nav__cta contact-slide" style="--slide:#D6CB2A"><span class="cs-label">Contact Us</span></a>
-    </nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="wrap">
+    <h1 class="hero__title serif">Test merch on your channel. Zero risk.</h1>
+    <div class="hero__media">
+      <div class="hero__imgwrap" id="heroImgWrap">
+        <picture>
+          <source type="image/avif" srcset="images/header-800.avif 800w, images/header-1200.avif 1200w, images/header-2002.avif 2002w, images/header-3003.avif 3003w" sizes="(max-width:800px) 82vw, 560px" />
+          <img class="hero__img" id="heroImg" src="images/header-1200.webp" srcset="images/header-800.webp 800w, images/header-1200.webp 1200w, images/header-2002.webp 2002w, images/header.webp 3003w" sizes="(max-width:800px) 82vw, 560px" width="1001" height="1251" alt="Custom printed mug — example creator merch" decoding="async" fetchpriority="high" />
+        </picture>
+      </div>
+      <a href="#sendSection" class="btn btn--yellow hero__cta js-cta">Get your free design<svg class="btn-arrow" viewBox="0 0 100 100" aria-hidden="true"><path d="M14 50 H80"/><path d="M53 23 L86 50 L53 77"/></svg></a>
+    </div>
   </div>
 </header>
-<div class="scale-wrap" id="scaleWrap">
-  <!-- 1:1 reproduction of the provided 1920×3524 canvas -->
-  <div class="stage" id="stage" style="width: 1920px; height: 2540px; position: relative; background: #FFFFFF; overflow: hidden">
 
-    <!-- Heading -->
-    <div class="reveal reveal-1" style="width: 1201px; height: 561px; left: 266px; top: 26px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.95); font-size: 160px; font-family: 'Instrument Serif'; font-weight: 400; line-height: 166.87px; word-wrap: break-word">High Quality Merch for All Creators</div>
-
-    <!-- Premium Storefronts heading -->
-    <div id="storefronts" style="width: 1201px; height: 561px; left: 359px; top: 1436px; position: absolute; text-align: center; justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.95); font-size: 130px; font-family: 'Instrument Serif'; font-weight: 400; line-height: 135.58px; word-wrap: break-word">Premium Storefronts</div>
-
-    <!-- Yellow CTA button -->
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abcreatormerch@gmail.com&su=Inquiry%20for%20AB%20Creator%20Merch" target="_blank" rel="noopener" class="reveal reveal-3 contact-slide" style="width: 521px; height: 128px; left: 1133px; top: 323px; position: absolute; background: #EBE248; text-decoration: none; --slide:#D6CB2A"></a>
-    <div class="cta-text reveal reveal-3" style="width: 521px; height: 86px; left: 1133px; top: 344px; position: absolute; text-align: center; justify-content: center; display: flex; flex-direction: column; pointer-events: none; color: rgba(0, 0, 0, 0.78)"><span style="font-size: 64px; font-family: Inter; font-weight: 600; line-height: 66.75px; word-wrap: break-word">Get in Touch</span><svg class="arrow-ico cta-arrow" viewBox="0 0 100 100" aria-hidden="true"><path d="M17 50 H68"/><path d="M48 28 L80 50 L48 72"/></svg></div>
-
-    <!-- Tagline -->
-    <div class="reveal reveal-2" style="width: 266px; height: 86px; left: 1385px; top: 191px; position: absolute; text-align: right; justify-content: center; display: flex; flex-direction: column; color: rgba(0, 0, 0, 0.60); font-size: 30px; font-family: Inter; font-weight: 400; line-height: 34.20px; word-wrap: break-word">Design, Print and and Ship, all in one place</div>
-
-    <!-- ===== Product showcase marquee (was the 6 grey 356×352 rects at top:505) ===== -->
-    <div class="marquee reveal reveal-4" style="left: 0px; top: 505px; width: 1920px; height: 352px; position: absolute; overflow: hidden">
-      <div class="marquee__track" id="marqueeTrack"></div>
-    </div>
-
-    <!-- Green block (top & bottom edges are wavy, baked into the rectangle itself) -->
-    <div id="process" class="green-box" style="width: 1920px; height: 661px; left: 0px; top: 916px; position: absolute; background: #055B43"></div>
-
-    <!-- Green cards -->
-    <div style="width: 430px; height: 384px; left: 252px; top: 1052px; position: absolute; background: #166F56; border-radius: 30px"></div>
-    <div style="width: 430px; height: 384px; left: 1238px; top: 1052px; position: absolute; background: #166F56; border-radius: 30px"></div>
-    <div style="width: 430px; height: 384px; left: 745px; top: 1052px; position: absolute; background: #166F56; border-radius: 30px"></div>
-
-    <!-- Design -->
-    <div style="width: 1201px; height: 208px; left: 296px; top: 1035px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 80px; font-family: 'Instrument Serif'; font-weight: 400; line-height: 83.43px; word-wrap: break-word">Design</div>
-    <div style="width: 297px; height: 360px; left: 296px; top: 1183px; position: absolute; color: rgba(255, 255, 255, 0.85); font-size: 30px; font-family: Inter; font-weight: 400; line-height: 31.29px; word-wrap: break-word">Custom merch and storefronts designed around your brand, not a template. We make it look like you.</div>
-
-    <!-- Print -->
-    <div style="width: 1201px; height: 208px; left: 793px; top: 1035px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 80px; font-family: 'Instrument Serif'; font-weight: 400; line-height: 83.43px; word-wrap: break-word">Print</div>
-
-    <!-- Ship -->
-    <div style="width: 1201px; height: 208px; left: 1283px; top: 1035px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 80px; font-family: 'Instrument Serif'; font-weight: 400; line-height: 83.43px; word-wrap: break-word">Ship</div>
-
-    <!-- ===== Premium Storefronts carousel (was the 1416×626 grey rect at top:1820) ===== -->
-    <div class="sf-carousel" style="left: 252px; top: 1820px; width: 1416px; height: 626px; position: absolute; overflow: hidden">
-      <div class="sf-track" id="carouselTrack"></div>
-    </div>
-    <button class="sf-arrow" id="prevBtn" style="left: 138px; top: 2106px; position: absolute" aria-label="Previous storefront">
-      <svg class="arrow-ico arrow-ico--left" viewBox="0 0 100 100" width="36" height="36" aria-hidden="true"><path d="M17 50 H68"/><path d="M48 28 L80 50 L48 72"/></svg>
-    </button>
-    <button class="sf-arrow" id="nextBtn" style="left: 1728px; top: 2106px; position: absolute" aria-label="Next storefront">
-      <svg class="arrow-ico" viewBox="0 0 100 100" width="36" height="36" aria-hidden="true"><path d="M17 50 H68"/><path d="M48 28 L80 50 L48 72"/></svg>
-    </button>
-    <div class="sf-dots" id="carouselDots" style="left: 252px; top: 2474px; width: 1416px; position: absolute"></div>
-
-    <!-- Print description -->
-    <div style="width: 297px; height: 360px; left: 793px; top: 1184px; position: absolute; color: rgba(255, 255, 255, 0.85); font-size: 30px; font-family: Inter; font-weight: 400; line-height: 31.29px; word-wrap: break-word">20+ premium products, printed with color and detail that hold up wash after wash.</div>
-
-    <!-- Ship description -->
-    <div style="width: 297px; height: 360px; left: 1283px; top: 1184px; position: absolute; color: rgba(255, 255, 255, 0.85); font-size: 30px; font-family: Inter; font-weight: 400; line-height: 31.29px; word-wrap: break-word">Print-on-demand fulfillment that scales with you. Shipped worldwide, hands-free.</div>
-
-  </div>
-</div>
-
-<main id="portfolioView" aria-label="Portfolio">
-  <div id="portfolioGallery" class="pf-gallery"></div>
-</main>
-
-<section class="closing" id="closing">
-  <!-- CTA (home only) -->
-  <div class="cl-wrap" id="clCtaWrap">
-    <div class="closing-stage" id="closingCta" style="width: 1920px; height: 789px; position: relative; overflow: hidden">
-      <div style="width: 1920px; height: 789px; left: 0px; top: 0px; position: absolute; background: #F25619"></div>
-      <div class="cl-bg" style="width: 1939px; height: 789px; left: 0px; top: 0px; position: absolute; background: linear-gradient(180deg, #2B2B2B 0%, #1A1A1A 100%)"></div>
-
-      <div class="cl-title" style="width: 1920px; height: 300px; left: 0px; top: 170px; position: absolute; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #FCFBFC; font-size: 220px; font-family: 'Instrument Serif'; font-weight: 400; line-height: 229.44px; word-wrap: break-word">Launch Your Merch</div>
-
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abcreatormerch@gmail.com&su=Inquiry%20for%20AB%20Creator%20Merch" target="_blank" rel="noopener" class="contact-slide" style="width: 521px; height: 128px; left: 700px; top: 450px; position: absolute; background: #F35519; text-decoration: none; --slide:#C8420F"></a>
-      <div class="cta-text" style="width: 521px; height: 86px; left: 700px; top: 471px; position: absolute; display: flex; align-items: center; justify-content: center; pointer-events: none; color: #FFFFFF"><span style="font-size: 64px; font-family: Inter; font-weight: 600; line-height: 66.75px; word-wrap: break-word">Get in Touch</span><svg class="arrow-ico cta-arrow" viewBox="0 0 100 100" aria-hidden="true"><path d="M17 50 H68"/><path d="M48 28 L80 50 L48 72"/></svg></div>
+<!-- ===== Why it's zero risk ===== -->
+<section class="why">
+  <div class="wrap">
+    <div class="why__grid">
+      <article class="why__card sr">
+        <h2 class="serif">Free design</h2>
+        <p>Custom merch and storefronts designed around your brand, not a template. We make it look like you.</p>
+      </article>
+      <article class="why__card sr">
+        <h2 class="serif">Free setup</h2>
+        <p>We handle the store, fulfillment, and customer service. You only touch the money.</p>
+      </article>
+      <article class="why__card sr">
+        <h2 class="serif">No risk</h2>
+        <p>If it doesn't sell, you paid nothing. You keep the design either way.</p>
+      </article>
     </div>
   </div>
+</section>
 
-  <!-- Footer strip (both pages; light on portfolio) -->
-  <div class="cl-wrap" id="clFootWrap">
-    <div class="closing-stage" id="closingFooter" style="width: 1920px; height: 211px; position: relative; overflow: hidden">
-      <div class="cl-footer" style="width: 1920px; height: 211px; left: 0px; top: 0px; position: absolute; background: #191919; display: flex; align-items: center; justify-content: space-between; padding: 0 80px; box-sizing: border-box">
-        <span class="cl-dim" style="font-size: 20px; font-family: Inter; font-weight: 400; line-height: 20.86px; color: rgba(255, 255, 255, 0.60)">Copyright @ 2026 AB Creator Merch. All Rights Reserved.</span>
-        <a class="cl-dim cl-email" href="mailto:abcreatormerch@gmail.com" style="font-size: 20px; font-family: Inter; font-weight: 400; line-height: 20.86px; color: rgba(255, 255, 255, 0.60); text-decoration: none">abcreatormerch@gmail.com</a>
+<!-- ===== Powerful Designs ===== -->
+<section class="designs">
+  <div class="wrap">
+    <h2 class="serif sr">Powerful Designs</h2>
+    <div class="designs__grid">
+      <div class="design-item">
+        <div class="design-tile sr"></div>
+        <a href="#sendSection" class="btn btn--like js-cta sr">I like this</a>
+      </div>
+      <div class="design-item">
+        <div class="design-tile sr"></div>
+        <a href="#sendSection" class="btn btn--like js-cta sr">I like this</a>
+      </div>
+      <div class="design-item">
+        <div class="design-tile sr"></div>
+        <a href="#sendSection" class="btn btn--like js-cta sr">I like this</a>
       </div>
     </div>
   </div>
 </section>
 
-<script src="script.js?v=19"></script>
+<!-- ===== Send your channel link ===== -->
+<section class="send" id="sendSection">
+  <div class="wrap">
+    <h2 class="serif sr">Send your channel link</h2>
+    <form class="channel-form" id="channelFormEl" novalidate>
+      <input id="channelInput" name="channel" type="text" inputmode="url" autocomplete="off" required
+             placeholder="youtube.com/@yourchannel" aria-label="Your channel link" class="cf-input" />
+      <button type="submit" id="channelSubmit" class="cf-btn">Send</button>
+    </form>
+    <p class="cf-status" id="channelStatus" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Copyright @ 2026 AB Creator Merch. All Rights Reserved.</span>
+    <a href="mailto:abcreatormerch@gmail.com">abcreatormerch@gmail.com</a>
+  </div>
+</footer>
+
+<script src="script.js?v=12" defer></script>
 </body>
 </html>
